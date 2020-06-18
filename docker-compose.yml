@@ -6,7 +6,6 @@ services:
     environment:
       port: ${PORT}
       domain: ${DOMAIN}
-      auth_required: ${AUTH_REQUIRED}
     build:
       args:
         username: ${USERNAME}
