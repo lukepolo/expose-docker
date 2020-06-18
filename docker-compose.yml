@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  expose:
+    ports:
+      - 8080:${PORT}
+    environment:
+      port: ${PORT}
+      domain: ${DOMAIN}
+      auth_required: ${AUTH_REQUIRED}
+    build:
+      args:
+        username: ${USERNAME}
+        password: ${PASSWORD}
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./expose.db:/root/.expose/expose.db
