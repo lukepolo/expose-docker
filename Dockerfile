@@ -31,6 +31,4 @@ RUN sed -i "s|password|${password}|g" /root/.expose/config.php
 ENV port=8080
 ENV domain=localhost
 
-RUN echo $HOME
-
 CMD php ~/.composer/vendor/bin/expose serve ${domain} --port ${port} --validateAuthTokens
